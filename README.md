@@ -1,15 +1,15 @@
 # api-ppe
 Api rest realizada con lumen para PPE
 
-#tools
+##tools
 https://laragon.org/
 
-#Lecturas y recursos utilizados
+##Lecturas y recursos utilizados
  - http://laraveles.com/docs/5.0/eloquent
  - https://lumen.laravel.com/
  - https://www.youtube.com/watch?v=JHsUq9QIcc4
  - https://coderexample.com/restful-api-in-lumen-a-laravel-micro-framework/
 
-#interesante pero complicado para usar en este proyecto
+##interesante pero complicado para usar en este proyecto
  - https://styde.net/aprende-a-instalar-y-usar-vagrant-y-laravel-homestead/
  - http://www.desarrolloweb.com/articulos/instalar-homestead-para-laravel5.html
