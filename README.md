@@ -6,6 +6,7 @@ https://laragon.org/
 
 ##Lecturas y recursos utilizados
  - http://laraveles.com/docs/5.0/eloquent
+ - http://laraveles.com/docs/5.0/eloquent#relationships
  - https://lumen.laravel.com/
  - https://www.youtube.com/watch?v=JHsUq9QIcc4
  - https://coderexample.com/restful-api-in-lumen-a-laravel-micro-framework/
