@@ -1,0 +1,54 @@
+Administrador 13/09/2016
+______________________________________________________________________
+Nombre: Fines
+	# id
+	- nombre
+	- descripcion
+	- direccion
+	- objetivo operativo
+	=> Una dirección puede tener muchos responsables
+
+-----------------------------------------------------------------------
+Nombre Usuarios
+	# id
+	- apellido
+	- nombre
+	- dni
+	- telefono
+	- correo
+	=> Definir tipos
+
+-----------------------------------------------------------------------
+Nombre: Planes
+	# id
+	- nombre
+	- descripcion
+	=> un plan puede tener muchos ejes?
+
+------------------------------------------------------------------------
+Nombre Ejes
+	# id
+	- nombre
+	- descripcion
+	- plan
+	=> 	Un eje debe pertenecer a un plan 1:1
+
+------------------------------------------------------------------------
+Nombre ObjetivosEstrategicos
+	# id
+	- nombre
+	- descripcion
+	- eje
+	=> cada objetivo debe pertenecer a un eje 1:1
+
+------------------------------------------------------------------------
+Nombre ObjetivosOperativos
+	# id
+	- indicador
+	- meta
+	- vigencia
+	- objetivo
+	- tipo
+	=> tipo indica si es estrategico u operativo
+
+-------------------------------------------------------------------------
