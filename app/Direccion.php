@@ -11,6 +11,6 @@ class Direccion extends Model
 	//relacion que indica que cada direccion tiene un solo responsable
 	public function usuario()
 	{
-		return $this->belongsTo('App\Usuario');
+		return $this->hasOne('App\Usuario');
 	}
 }

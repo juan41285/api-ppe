@@ -13,5 +13,17 @@ class ObjetivoEstrategico extends Model
 	{
 		return $this->belongsTo('App\Eje');
 	}
-	
+
+    //relacion un objetivo estrategico tiene muchos objetivos operativos
+	public function operativos()
+	{
+		return $this->hasMany('App\ObjetivoOperativo');
+	}
+
+ //relacion un objetivo estrategico tiene muchos indicadores
+	public function oeindicadores()
+	{
+		return $this->hasMany('App\Indicador');
+	}
+
 }
