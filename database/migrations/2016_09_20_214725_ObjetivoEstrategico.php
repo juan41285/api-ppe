@@ -16,7 +16,7 @@ class ObjetivoEstrategico extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->integer('eje_id')->unsigned();
+            $table->integer('eje_id')->references('id')->on('ejes');
             $table->timestamps();
         });
     }
