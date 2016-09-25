@@ -10,6 +10,7 @@ https://laragon.org/
  - https://lumen.laravel.com/
  - https://www.youtube.com/watch?v=JHsUq9QIcc4
  - https://coderexample.com/restful-api-in-lumen-a-laravel-micro-framework/
+ - https://styde.net/modificando-migraciones-en-laravel/
 
 ##interesante pero complicado para usar en este proyecto
  - https://styde.net/aprende-a-instalar-y-usar-vagrant-y-laravel-homestead/
