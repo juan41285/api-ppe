@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ObjetivoEstrategico extends Migration
+class ObjetivoOperativoMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class ObjetivoEstrategico extends Migration
      */
     public function up()
     {
-        Schema::create('estrategicos', function (Blueprint $table) {
+        Schema::create('objetivos_operativos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->string('descripcion');
-            $table->integer('eje_id')->references('id')->on('ejes');
+            $table->longText('descripcion');
+            $table->integer('objetivo_estrategico_id')->unsigned();
+            $table->foreign('objetivo_estrategico_id')->references('id')->on('objetivos_estrategicos');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class ObjetivoEstrategico extends Migration
      */
     public function down()
     {
-        Schema::drop('estrategicos');
+        Schema::drop('objetivos_operativos');
     }
 }

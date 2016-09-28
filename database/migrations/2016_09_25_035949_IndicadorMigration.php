@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Direccion extends Migration
+class IndicadorMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,13 @@ class Direccion extends Migration
      */
     public function up()
     {
-        Schema::create('direcciones', function (Blueprint $table) {
+        Schema::create('indicadores', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('indicador');
+            $table->string('meta');
+            $table->dateTime('vigencia');
+            $table->integer('objetivo');         
+            $table->integer('tipo');         
             $table->timestamps();
         });
     }
@@ -25,6 +30,6 @@ class Direccion extends Migration
      */
     public function down()
     {
-        Schema::drop('direcciones');
+        Schema::drop('indicadores');
     }
 }

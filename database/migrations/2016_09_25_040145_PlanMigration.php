@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ObjetivoOperativo extends Migration
+class PlanMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,10 @@ class ObjetivoOperativo extends Migration
      */
     public function up()
     {
-        Schema::create('operativos', function (Blueprint $table) {
+        Schema::create('planes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->longText('descripcion');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ class ObjetivoOperativo extends Migration
      */
     public function down()
     {
-        Schema::drop('operativos');
+        Schema::drop('planes');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Indicador extends Migration
+class ObjetivoEstrategicoMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class Indicador extends Migration
      */
     public function up()
     {
-        Schema::create('indicadores', function (Blueprint $table) {
+        Schema::create('objetivos_estrategicos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('indicador');
-            $table->string('meta');
-            $table->date('vigencia');
-            $table->integer('tipo');
-            $table->integer('objetivo');
+            $table->string('nombre');
+            $table->longText('descripcion');
+            $table->integer('eje_id')->unsigned();
+            $table->foreign('eje_id')->references('id')->on('ejes');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class Indicador extends Migration
      */
     public function down()
     {
-        Schema::drop('indicadores');
+        Schema::drop('objetivos_estrategicos');
     }
 }

@@ -5,12 +5,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
 * 
 */
-class Direccion extends Model
+class Responsable extends Model
 {
 	
 	//relacion que indica que cada direccion tiene un solo responsable
-	public function responsable()
+	public function direccion()
 	{
-		return $this->hasMany('App\Responsable');
+		return $this->belongsTo('App\Direccion');
 	}
+	
 }

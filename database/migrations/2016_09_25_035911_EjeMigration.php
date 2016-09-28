@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Eje extends Migration
+class EjeMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,10 @@ class Eje extends Migration
     {
         Schema::create('ejes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->longText('descripcion');
+            $table->integer('plan_id')->unsigned();
+            $table->foreign('plan_id')->references('id')->on('planes');
             $table->timestamps();
         });
     }

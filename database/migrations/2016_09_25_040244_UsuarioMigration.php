@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Plan extends Migration
+class UsuarioMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,14 @@ class Plan extends Migration
      */
     public function up()
     {
-        Schema::create('planes', function (Blueprint $table) {
+        Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('apellido');
+            $table->string('nombre');
+            $table->string('dni');
+            $table->string('telefono');
+            $table->string('correo');
+            $table->integer('tipo');
             $table->timestamps();
         });
     }
@@ -25,6 +31,6 @@ class Plan extends Migration
      */
     public function down()
     {
-        Schema::drop('planes');
+        Schema::drop('usuarios');
     }
 }
