@@ -13,4 +13,5 @@ class Direccion extends Model
 	{
 		return $this->hasMany('App\Responsable');
 	}
+	 protected $table = 'direcciones';
 }

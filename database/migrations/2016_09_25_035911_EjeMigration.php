@@ -17,8 +17,10 @@ class EjeMigration extends Migration
             $table->string('nombre');
             $table->longText('descripcion');
             $table->integer('plan_id')->unsigned();
-            $table->foreign('plan_id')->references('id')->on('planes');
             $table->timestamps();
+
+            $table->foreign('plan_id')->references('id')->on('planes');
+            
         });
     }
 

@@ -1,0 +1,7 @@
+Direcciones
+obtener todas las direcciones GET ->    /direcciones@index
+guardar direcciones           POST ->   /direcciones@store
+editar direcciones            PUT ->    /direcciones/{direccion}@unpdate
+eliminar direacciones         DELETE -> /direcciones/{direccion}@destroy
+obtener una direccion         GET ->    /direcciones/{direccion}@show   
+
