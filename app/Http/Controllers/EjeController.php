@@ -1,40 +1,87 @@
 <?php namespace App\Http\Controllers;
 
+use App\Eje;
+use Illuminate\Http\Request;
 
 class EjeController extends Controller
 {
     //
     public function index(){
 
-    	//test
-    	return 'eje obtener';
+    	$ejes = Eje::all();
+        return $this->crearRespuesta($ejes, 200);
     }
     //
-    public function show()
+    public function show($id)
 	{
-    	return 'eje obtener';
+    	$ejes =Eje::find($id);
+        if($ejes)
+        {
+            
+           return $this->crearRespuesta($ejes, 200);      
+
+        }
+
+        return $this->crearRespuestaError('El Eje no existe', 404);
 		
 	}
 	//
-    public function store(){
+    public function store(Request $request){
 
-    	//test
-    	return 'eje direcciones@store';
+    	$this->validacion($request);
+
+        Eje::create($request->all());
+
+        return $this->crearRespuesta('Eje creado correctamente', 201);
     	
     }
     	//
-    public function update(){
+    public function update(Request $request, $eje_id){
 
-    	//test
-    	return 'eje a';
+    	$eje = Eje::find($eje_id);
+
+        if($eje){
+            $this->validacion($request);
+
+            $nombre = $request->get('nombre');
+            $descripcion = $request->get('descripcion');
+            $plan_id = $request->get('plan_id');
+
+            $eje->nombre =$nombre;
+            $eje->descripcion =$descripcion;
+            $eje->plan_id =$plan_id;
+
+            $eje->save();
+
+            return $this->crearRespuesta('Eje actualizado correctamente', 201);
+
+        }
+    
+       return $this->crearRespuestaError('El Eje que desea actualizar no existe', 404);
 
     }
     	//
-    public function destroy(){
+    public function destroy($eje_id){
 
-    	//test
-    	return 'eje df';
+    	$eje = Eje::find($eje_id);
+        if($eje){
+
+            $eje->delete();
+            return $this->crearRespuesta('Eje eliminado correctamente', 200);
+        }
+       return $this->crearRespuestaError('El Eje no pudo ser eliminado', 404);
     	
+    }
+        //
+    public function validacion($request){
+        $reglas=
+        [
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'plan_id' => 'required|numeric',
+        ];
+
+        $this->validate($request, $reglas);
     }
 
 }

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 */
 class Eje extends Model
 {
+	//agregar a todos los archivos los campos que tienen
+	protected $fillable = ['nombre', 'descripcion', 'plan_id'];
 	//relacion un eje pertenece a un solo plan especifico
 	public function plan()
 	{
@@ -18,4 +20,6 @@ class Eje extends Model
 	{
 		return $this->hasMany('App\ObjetivoEstrategico');
 	}
+	protected $table = 'ejes';
+
 }

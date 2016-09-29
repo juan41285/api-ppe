@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Indicador extends Model
 {
 	
+	//agregar a todos los archivos los campos que tienen
+	protected $fillable = ['indicador', 'meta', 'vigencia','objetivo','tipo'];
 	//relacion un indicador puede tener muchos Obj estrategicos
 	public function iestrategicos()
 	{
@@ -18,4 +20,5 @@ class Indicador extends Model
 	{
 		return $this->belongsTo('App\ObjetivoOperativo');
 	}
+	protected $table = 'indicadores';
 }

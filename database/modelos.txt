@@ -15,6 +15,7 @@ Nombre Usuarios
 	- dni
 	- telefono
 	- correo
+	- tipo
 	=> Definir tipos
 
 -----------------------------------------------------------------------

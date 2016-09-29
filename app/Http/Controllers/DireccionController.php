@@ -30,7 +30,6 @@ class DireccionController extends Controller
     public function store(Request $request){
 
         $this->validacion($request);
-    	$this->validate($request, $reglas);
 
         Direccion::create($request->all());
 

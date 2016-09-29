@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 */
 class ObjetivoOperativo extends Model
 {
-	    //relacion un objetivo operativo pertence a un estrategico
+	//agregar a todos los archivos los campos que tienen
+	protected $fillable = ['nombre', 'descripcion', 'objetivo_estrategico_id'];
+	//relacion un objetivo operativo pertence a un estrategico
 	public function estrategico()
 	{
 		return $this->belongsTo('App\ObjetivoEstrategico');
@@ -18,5 +20,5 @@ class ObjetivoOperativo extends Model
 	{
 		return $this->hasMany('App\Indicador');
 	}
-	
+	protected $table = 'objetivos_operativos';
 }

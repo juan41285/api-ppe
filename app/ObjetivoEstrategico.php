@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ObjetivoEstrategico extends Model
 {
 	
+	//agregar a todos los archivos los campos que tienen
+	protected $fillable = ['nombre', 'descripcion', 'eje_id'];
 	//relacion un objetivo estrategico pertenece a un eje
 	public function eje()
 	{
@@ -25,5 +27,5 @@ class ObjetivoEstrategico extends Model
 	{
 		return $this->hasMany('App\Indicador');
 	}
-
+	protected $table = 'objetivos_estrategicos';
 }
