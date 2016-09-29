@@ -17,8 +17,8 @@ class DireccionController extends Controller
     	$direcciones =Direccion::find($id);
         if($direcciones)
         {
-           $responsable = $direcciones->responsable;
-           return $this->crearRespuesta($responsable, 200);      
+            
+           return $this->crearRespuesta($direcciones, 200);      
 
         }
 
