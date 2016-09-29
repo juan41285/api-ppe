@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Direccion;
+use Illuminate\Http\Request;
 
 class DireccionController extends Controller
 {
@@ -11,31 +12,77 @@ class DireccionController extends Controller
         return $this->crearRespuesta($direcciones, 200);
     }
     //
-    public function show()
+    public function show($id)
 	{
-    	return 'direcciones obtener';
+    	$direcciones =Direccion::find($id);
+        if($direcciones)
+        {
+           $responsable = $direcciones->responsable;
+           return $this->crearRespuesta($responsable, 200);      
+
+        }
+
+        return $this->crearRespuestaError('La Direccion no existe', 404);
+        
 		
 	}
 	//
-    public function store(){
+    public function store(Request $request){
 
-    	//test
-    	return 'direcciones obtener';
+        $this->validacion($request);
+    	$this->validate($request, $reglas);
+
+        Direccion::create($request->all());
+
+        return $this->crearRespuesta('La Dirección fue creada correctamente', 201);
     	
     }
     	//
-    public function update(){
+    public function update(Request $request, $direccion_id){
 
-    	//test
-    	return 'direcciones update';
+    	$direccion = Direccion::find($direccion_id);
 
+        if($direccion){
+            $this->validacion($request);
+
+            $nombre = $request->get('nombre');
+            $correo = $request->get('correo');
+            $responsable = $request->get('responsable');
+
+            $direccion->nombre =$nombre;
+            $direccion->correo =$correo;
+            $direccion->responsable =$responsable;
+
+            $direccion->save();
+
+            return $this->crearRespuesta('La Dirección fue actualizada correctamente', 201);
+
+        }
+    
+       return $this->crearRespuestaError('La Dirección que desea actualizar no existe', 404);
     }
     	//
-    public function destroy(){
+    public function destroy($direccion_id){
 
-    	//test
-    	return 'direcciones obtener';
+    	$direccion = Direccion::find($direccion_id);
+        if($direccion){
+
+            $direccion->delete();
+            return $this->crearRespuesta('La Dirección fue eliminada correctamente', 200);
+        }
+       return $this->crearRespuestaError('La Dirección no pudo ser eliminada', 404);
     	
+    }
+
+    public function validacion($request){
+        $reglas=
+        [
+            'nombre' => 'required',
+            'correo' => 'required',
+            'responsable' => 'required|numeric',
+        ];
+
+        $this->validate($request, $reglas);
     }
 
 }
