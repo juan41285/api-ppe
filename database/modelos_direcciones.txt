@@ -4,25 +4,42 @@ Nombre: Fines
 	# id
 	- nombre
 	- descripcion
-	- direccion
+	- direcciones
 	- objetivo operativo
 	=> Una dirección puede tener muchos responsables
 
 -----------------------------------------------------------------------
-Nombre Usuarios
+Nombre Proyectos
 	# id
-	- apellido
 	- nombre
-	- dni
-	- telefono
-	- correo
-	=> Definir tipos
+	- fin al que pertenece 
+	- Direccion que lo creo
+------------------------------------------------------------------
+Proyecto_colaboradores
+	- #id
+	- pryecto_id
+	- direccion_id
+	- usuario_id
+-----------------------------------------------------------------
+Proyecto_Indicadored
+	- #id
+	- pryecto_id
+	- indicador_id
+	- usuario_id
+
+
+
 
 -----------------------------------------------------------------------
-Nombre: Planes
+Nombre: Accion
 	# id
 	- nombre
-	- descripcion
+	- fecha incio
+	- fecha fin
+	- Prioridad
+	- Responsable
+	- Estado
+	- Detalle o avance
 	=> un plan puede tener muchos ejes?
 
 ------------------------------------------------------------------------

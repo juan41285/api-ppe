@@ -66,6 +66,41 @@ $app->get('/usuario/{id}','UsuarioController@show');
 $app->put('/usuario/{id}','UsuarioController@update');
 $app->patch('/usuario/{id}','UsuarioController@update');
 $app->delete('/usuario/{id}','UsuarioController@destroy');
+//FinController
+$app->get('/fines','FinController@index');
+$app->post('/fines','FinController@store');
+$app->get('/fines/{id}','FinController@show');
+$app->put('/fines/{id}','FinController@update');
+$app->patch('/fines/{id}','FinController@update');
+$app->delete('/fines/{id}','FinController@destroy');
+//ProyectoController
+$app->get('/proyecto','ProyectoController@index');
+$app->post('/proyecto','ProyectoController@store');
+$app->get('/proyecto/{id}','ProyectoController@show');
+$app->put('/proyecto/{id}','ProyectoController@update');
+$app->patch('/proyecto/{id}','ProyectoController@update');
+$app->delete('/proyecto/{id}','ProyectoController@destroy');
+//ColaboradorController
+$app->get('/colaborador','ColaboradorController@index');
+$app->post('/colaborador','ColaboradorController@store');
+$app->get('/colaborador/{id}','ColaboradorController@show');
+$app->put('/colaborador/{id}','ColaboradorController@update');
+$app->patch('/colaborador/{id}','ColaboradorController@update');
+$app->delete('/colaborador/{id}','ColaboradorController@destroy');
+//ProyectoIndicadorController
+$app->get('/proyecto_indicador','ProyectoIndicadorController@index');
+$app->post('/proyecto_indicador','ProyectoIndicadorController@store');
+$app->get('/proyecto_indicador/{id}','ProyectoIndicadorController@show');
+$app->put('/proyecto_indicador/{id}','ProyectoIndicadorController@update');
+$app->patch('/proyecto_indicador/{id}','ProyectoIndicadorController@update');
+$app->delete('/proyecto_indicador/{id}','ProyectoIndicadorController@destroy');
+//AccionController
+$app->get('/accion','AccionController@index');
+$app->post('/accion','AccionController@store');
+$app->get('/accion/{id}','AccionController@show');
+$app->put('/accion/{id}','AccionController@update');
+$app->patch('/accion/{id}','AccionController@update');
+$app->delete('/accion/{id}','AccionController@destroy');
 
 $app->get('/', function() use ($app) {
     return $app->welcome();
