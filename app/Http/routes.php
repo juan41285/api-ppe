@@ -101,6 +101,20 @@ $app->get('/accion/{id}','AccionController@show');
 $app->put('/accion/{id}','AccionController@update');
 $app->patch('/accion/{id}','AccionController@update');
 $app->delete('/accion/{id}','AccionController@destroy');
+//PrioridadController
+$app->get('/prioridad','PrioridadController@index');
+$app->post('/prioridad','PrioridadController@store');
+$app->get('/prioridad/{id}','PrioridadController@show');
+$app->put('/prioridad/{id}','PrioridadController@update');
+$app->patch('/prioridad/{id}','PrioridadController@update');
+$app->delete('/prioridad/{id}','PrioridadController@destroy');
+//EstadoController
+$app->get('/estado','EstadoController@index');
+$app->post('/estado','EstadoController@store');
+$app->get('/estado/{id}','EstadoController@show');
+$app->put('/estado/{id}','EstadoController@update');
+$app->patch('/estado/{id}','EstadoController@update');
+$app->delete('/estado/{id}','EstadoController@destroy');
 
 $app->get('/', function() use ($app) {
     return $app->welcome();
